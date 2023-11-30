@@ -1,27 +1,6 @@
-# Expo Template Realm TypeScript
-<p>
-  <!-- iOS -->
-  <img alt="Supports Expo iOS" longdesc="Supports Expo iOS" src="https://img.shields.io/badge/iOS-4630EB.svg?style=flat-square&logo=APPLE&labelColor=999999&logoColor=fff" />
-  <!-- Android -->
-  <img alt="Supports Expo Android" longdesc="Supports Expo Android" src="https://img.shields.io/badge/Android-4630EB.svg?style=flat-square&logo=ANDROID&labelColor=A4C639&logoColor=fff" />
-</p>
+# Task App with Realm and React Native
 
-Simple Expo template to quickly get started with Realm.
-
-## 🚀 How to use
-
-Use the following command to generate your template:
-
-```
-npx create-expo-app MyAwesomeRealmApp --template @realm/expo-template
-```
-
-NOTE: version of `npm` before v9 may cause problems when initializing the template.  If the initialization fails, please upgrade to the latest `npm` and try again.
-
-```
-npm install -g npm
-```
-## 🏃 How to build and run locally
+## 🚀 Installation and Setup
 
 - [Setup development Environment](https://reactnative.dev/docs/environment-setup)
 - Build/Run on iOS 🍎
@@ -50,16 +29,22 @@ yarn start
 npm run start
 ```
 
-## 🔀 Setting up sync
 
-See https://github.com/realm/realm-js/blob/master/templates/docs/sync-setup.md for instructions.
+## 📖 Overview
 
-## ☁️ Build in the cloud
+This React Native app utilizes Realm for local data storage and synchronization, enabling an offline-first experience.
 
-- [Building with EAS](https://docs.expo.dev/eas/)
-## 📝 Notes
-- [React Native docs](https://reactnative.dev/docs/getting-started)
-- [React Hooks](https://reactjs.org/docs/hooks-intro.html)
-- [Setting Up Realm Sync](https://docs.mongodb.com/realm/sdk/react-native/quick-start/)
-- [Realm JS Documentation](https://docs.mongodb.com/realm/sdk/react-native/)
-- [@realm/react Readme](https://github.com/realm/realm-js/tree/master/packages/realm-react#readme)
+### Persistent Store
+The app uses `@realm/react` and `realm` packages for local data storage. Data is stored in Realm objects, defined in schemas like `OfferSchema`. Realm's local database syncs seamlessly with MongoDB Atlas when online.
+
+### State Management and Data Fetching
+State management is handled reactively using Realm's `useQuery` hook. Data is fetched and stored in Realm's local database, allowing for both online and offline access.
+
+### Tracking User Interactions
+To track interactions with discount codes, the could increment the `clickCount` field in the `Offer` Realm object.
+ This update would be captured even offline and synced back to the server when online.
+
+### Deliverables
+- **GitHub Repository**: Contains the React Native app with offline-first capabilities.
+- **Packages and Libraries**: Utilizes `@realm/react` for React integration and `realm` for local storage and sync.
+- **Data Management**: Outlines our approach for local storage, state management, and user interaction tracking.
