@@ -41,7 +41,7 @@ The app uses `@realm/react` and `realm` packages for local data storage. Data is
 State management is handled reactively using Realm's `useQuery` hook. Data is fetched and stored in Realm's local database, allowing for both online and offline access.
 
 ### Tracking User Interactions
-To track interactions with discount codes, the could increment the `clickCount` field in the `Offer` Realm object.
+To track interactions with discount codes, we could increment the `clickCount` field in the `Offer` Realm object.
  This update would be captured even offline and synced back to the server when online.
 
 ### Deliverables
